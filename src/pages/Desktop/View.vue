@@ -89,8 +89,7 @@ export default {
   name: 'PageViewById',
   meta () {
     return {
-      title: this.webinfo.title + " | " + 
-        isEmptyObject(this.data) ? "Unknown":this.data.name
+      title: this.webinfo.title + " | " + this.data.name
     }
   },
   data () {
@@ -105,6 +104,11 @@ export default {
     ...mapGetters({
       emergency: 'emergencyDb/getById'
     })
+  },
+  beforeRouteUpdate (to, from, next) {
+    this.data = this.emergency(to.params.id)
+    if(isEmptyObject(this.data)){this.$router.push({name: 'home'})}
+    next()
   },
   beforeMount(){
       this.data = this.emergency(this.$route.params.id)

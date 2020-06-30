@@ -126,9 +126,14 @@ export default {
       emergency: 'emergencyDb/getById'
     })
   },
+  beforeRouteUpdate (to, from, next) {
+    this.data = this.emergency(to.params.id)
+    if(isEmptyObject(this.data)){this.$router.push({name: 'home'})}
+    next()
+  },
   beforeMount(){
-      this.data = this.emergency(this.$route.params.id)
-      if(isEmptyObject(this.data)){this.$router.push({name: 'home'})}
+    this.data = this.emergency(this.$route.params.id)
+    if(isEmptyObject(this.data)){this.$router.push({name: 'home'})}
   },
   methods: {
     scrollToId (id) {

@@ -110,8 +110,7 @@ export default {
   name: 'PageViewById',
   meta () {
     return {
-      title: this.webinfo.title + " | " + 
-        isEmptyObject(this.data) ? "Unknown":this.data.name
+      title: this.webinfo.title + " | " + this.data.name
     }
   },
   data () {

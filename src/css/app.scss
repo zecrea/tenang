@@ -1,0 +1,201 @@
+// app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;600;700;800&display=swap');
+
+$color-custom: (
+    blue: #6690A3,
+    gray: #616161 #e5e9ec,
+    black: #282A34,
+    purple: #6631d0 #6659de
+);
+
+@each $key, $val in $color-custom {
+    @for $i from 1 through length($val) {
+        .text-custom-#{$key}-#{$i} {
+            color: nth($val,$i) !important;
+        }
+
+        .bg-custom-#{$key}-#{$i} {
+            background: nth($val,$i) !important;
+        }
+    }
+}
+
+//desktop headline
+.div-about-parent {
+    width: 87%;
+    .div-about-container {
+        text-align: justify;
+        word-wrap: break-word !important;
+        word-break: keep-all !important;
+    }
+}
+
+.content-parent {
+    .card {
+        width: 87%;
+        max-height: 200px;
+
+        .content-content {
+            word-wrap: break-word !important;
+            word-break: keep-all !important;
+        }
+
+        .small-content {
+            width: 40%;
+            max-height: 200px;
+
+            p {
+                word-wrap: break-word !important;
+                word-break: keep-all !important;
+                text-align: justify !important;
+            }
+        }
+
+        .big-content {
+            width: 60%;
+            max-height: 200px;
+
+            p {
+                word-wrap: break-word !important;
+                word-break: keep-all !important;
+                text-align: justify !important;
+            }
+        }
+    }
+}
+
+.headline {
+    .card {
+        width: 87%;
+        //max-width: $breakpoint-sm-max;
+
+        .btn-custom {
+            width: 60%;
+            opacity: 0.85;
+        }
+
+        .btn-custom-2 {
+            width: 30%;
+            opacity: 0.85;
+        }
+
+        .caption-parent {
+            height: 100% !important;
+            width: 60% !important;
+        }
+
+        .overlay-grad-1 {
+            background:
+            linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73));
+            width: 100%;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+        }
+
+        .overlay-grad-2 {
+            background: linear-gradient(to bottom right,rgba(0, 47, 75, 0.52),rgba(220, 66, 37, 0.73));
+            padding: 20px;
+        }
+
+        .left-img {
+            width: 40%;
+            //display: block;
+            /*-webkit-transform: skew(-15deg, 0deg);
+            -moz-transform: skew(-15deg, 0deg);
+            -o-transform: skew(-15deg, 0deg);
+            -ms-transform: skew(-15deg, 0deg);
+            transform: skew(-15deg, 0deg);
+            position: relative;
+            min-height: 360px;
+            overflow: hidden;
+            width: 40%;
+            margin-left: -4.6%;*/
+            max-height: 360px;
+            img {
+                /*left: 50px;
+                top: 0;
+                height: 360px;
+                width: 100%;
+                border-top-left-radius: inherit;
+                border-bottom-left-radius: inherit;
+                -webkit-transform: skew(15deg, 0deg);
+                -moz-transform: skew(15deg, 0deg);
+                -o-transform: skew(15deg, 0deg);
+                -ms-transform: skew(15deg, 0deg);
+                transform: skew(15deg, 0deg);*/
+            }
+        }
+
+        .right-img {
+            width: 60%;
+            /*-webkit-transform: skew(-15deg, 0deg);
+            -moz-transform: skew(-15deg, 0deg);
+            -o-transform: skew(-15deg, 0deg);
+            -ms-transform: skew(-15deg, 0deg);
+            transform: skew(-15deg, 0deg);
+            position: relative;
+            min-height: 360px;
+            overflow: hidden;
+            width: 76.5%;
+            margin-right: -5.5%;*/
+            max-height: 360px;
+            img {
+                /*height: 360px;
+                right: 10%;
+                width: 100%;
+                border-top-right-radius: inherit;
+                border-bottom-right-radius: inherit;
+                -webkit-transform: skew(15deg, 0deg);
+                -moz-transform: skew(15deg, 0deg);
+                -o-transform: skew(15deg, 0deg);
+                -ms-transform: skew(15deg, 0deg);
+                transform: skew(15deg, 0deg);*/
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm-max){
+    .content-parent {
+        .card {
+            max-height: 500px !important;
+        }
+        .content-scroll {
+            height: 80%;
+            width: 100%;
+        }
+    }
+    
+    .headline {
+        .card {
+            max-height: 250px !important;
+    
+            .btn-custom-2 {
+                width: 60% !important;
+            }
+
+            .caption-text {
+                max-height: 100px;
+                word-wrap: break-word !important;
+                word-break: keep-all !important;
+            }
+        }
+    }
+}
+
+
+.font-robo {
+	font-family: 'Roboto Slab', sans-serif;
+}
+
+.text-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.smooth-transition {
+    * {
+      transition: all .3s linear;
+    }
+}

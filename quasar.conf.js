@@ -58,7 +58,7 @@ module.exports = function (/* ctx */) {
       // rtl: false, // https://quasar.dev/options/rtl-support
       // preloadChunks: true,
       showProgress: true,
-      gzip: {
+      /*gzip: {
         filename: '[path].br[query]',
         algorithm: 'brotliCompress',
         test: /\.(js|css|html|svg|woff|woff2)$/,
@@ -66,36 +66,9 @@ module.exports = function (/* ctx */) {
         threshold: 10240,
         minRatio: 0.8,
         deleteOriginalAssets: false,
-      },
-      //gzip: true,
+      },*/
+      gzip: true,
       minify: true,
-      uglifyOptions: {
-        toplevel: true,
-        ie8: true,
-        safari10: true,
-        mangle: {
-          toplevel: true,
-          safari10: true
-        },
-        output: {
-          comments: false,
-          beautify: false,
-          safari10: true
-        },
-        compress: {
-          sequences: true,
-          dead_code: true,
-          conditionals: true,
-          booleans_as_integers: true,
-          booleans: true,
-          unused: true,
-          if_return: true,
-          join_vars: true,
-          drop_console: true,
-          keep_fargs: false,
-          toplevel: true
-        }
-      },
 
       // Options below are automatically set depending on the env, set them if you want to override
       // extractCSS: false,

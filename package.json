@@ -17,7 +17,7 @@
     "vue-marquee-text-component": "^1.1.1"
   },
   "devDependencies": {
-    "@quasar/app": "^2.0.0"
+    "@quasar/app": "^3.3.2"
   },
   "browserslist": [
     "ie >= 11",
